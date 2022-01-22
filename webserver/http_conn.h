@@ -28,7 +28,7 @@ public:
     static const int READ_BUFFER_SIZE = 2048;   // 读缓冲区的大小
     static const int WRITE_BUFFER_SIZE = 1024;  // 写缓冲区的大小
     
-    // HTTP请求方法，这里只支持GET
+    // HTTP请求方法，这里只支持GET请求
     enum METHOD {GET = 0, POST, HEAD, PUT, DELETE, TRACE, OPTIONS, CONNECT};
     
     /*

@@ -1,3 +1,10 @@
+/*************************************************************************
+    > File Name: http_conn.cpp
+    > Author: CatalinChao
+    > Mail: xcodemiuios@gmail.com 
+    > Created Time: 一  5/17 11:13:49 2021
+ ************************************************************************/
+
 #include "http_conn.h"
 
 // 定义HTTP响应的一些状态信息
@@ -12,7 +19,7 @@ const char* error_500_title = "Internal Error";
 const char* error_500_form = "There was an unusual problem serving the requested file.\n";
 
 // 网站的根目录
-const char* doc_root = "/home/nowcoder/webserver/resources";
+const char* doc_root = "/home/catalinchao/webserver/resources";
 
 int setnonblocking( int fd ) {
     int old_option = fcntl( fd, F_GETFL );
@@ -286,7 +293,7 @@ http_conn::HTTP_CODE http_conn::process_read() {
 // 映射到内存地址m_file_address处，并告诉调用者获取文件成功
 http_conn::HTTP_CODE http_conn::do_request()
 {
-    // "/home/nowcoder/webserver/resources"
+    // "/home/catalinchao/webserver/resources"
     strcpy( m_real_file, doc_root );
     int len = strlen( doc_root );
     strncpy( m_real_file + len, m_url, FILENAME_LEN - len - 1 );
